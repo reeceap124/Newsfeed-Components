@@ -90,15 +90,6 @@ const data = [
 
 /* Step 1: Create a function that creates a component. You will want your component to look like the template below: 
   
-  <div class="article">
-    <h2>{title of the article}</h2>
-    <p class="date">{date of the article}</p>
-
-    {three separate paragraph elements}
-
-    <span class='expandButton'></span>
-  </div>
-
   Hint: You will need to use createElement more than once here!
 
   Your function should take either an object as it's one argument, or 5 separate arguments mapping to each piece of the data object above.
@@ -111,4 +102,58 @@ const data = [
 
   Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new article.
 
+  <div class="article">
+    <h2>{title of the article}</h2>
+    <p class="date">{date of the article}</p>
+
+    {three separate paragraph elements}
+
+    <span class='expandButton'></span>
+  </div>
+
 */
+function createArticle(object) {
+  //define new elements
+  const article = document.createElement('article');
+  const h2 = document.createElement('h2');
+  const date = document.createElement('p');
+  const p1 = document.createElement('p');
+  const p2 = document.createElement('p');
+  const p3 = document.createElement('p');
+  const span = document.createElement('span');
+
+  //structure of elements
+  article.appendChild(h2);
+  article.appendChild(date);
+  article.appendChild(p1);
+  article.appendChild(p2);
+  article.appendChild(p3);
+  article.appendChild(span);
+
+  //text content
+  h2.textContent = object.title;
+  date.textContent = object.date;
+  p1.textContent = object.firstParagraph;
+  p2.textContent = object.secondParagraph;
+  p3.textContent = object.thirdParagraph;
+  span.textContent = 'Expand';
+
+  //class names
+  article.classList.add('article');
+  date.classList.add('date');
+  span.classList.add('expandButton');
+
+  //functionality
+  span.addEventListener('click',()=>{
+    article.classList.toggle('article-open');
+    
+  })
+
+return article;
+} //end createArticle
+
+const articles = document.querySelector('.articles');
+
+data.forEach((el)=>{
+  articles.appendChild(createArticle(el));
+})
