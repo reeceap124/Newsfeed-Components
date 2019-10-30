@@ -72,7 +72,7 @@ const data = [
   },
   {
     title: 'Professional Software Development in 2019',
-    date: 'Jan 1st, 2019',
+    date: 'Sept 28, 2019',
     firstParagraph: `Hodor hodor HODOR! Hodor hodor - hodor, hodor. Hodor hodor... Hodor hodor hodor; hodor hodor. Hodor hodor hodor, hodor, hodor
           hodor. Hodor, hodor. Hodor. Hodor, hodor - hodor... Hodor hodor hodor; hodor HODOR hodor, hodor hodor?! Hodor hodor, hodor.
           Hodor hodor hodor hodor hodor! Hodor hodor - HODOR hodor, hodor hodor hodor hodor hodor; hodor hodor? `,
@@ -85,6 +85,26 @@ const data = [
     thirdParagraph: `Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
           Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
           Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
+  },
+
+  {
+    title: 'New Article 1',
+    date: 'Oct 30, 2019',
+    firstParagraph: `Ne eos legere tibique, modo torquatos pertinacia ei vis, pro ad integre denique lucilius. Te sed quod erat petentium. Id mandamus vituperata honestatis eam, definiebas dissentiunt no mei. Accusamus efficiendi at sea. Veritus luptatum antiopam cum ad, ut case cotidieque usu, aliquam honestatis voluptatibus ei nec. Mel ut elit altera feugiat, mundi mollis ocurreret at eam, unum tempor intellegebat nam at. Minim liber et vis, his an elit fugit antiopam.`,
+
+    secondParagraph: `Ne eos legere tibique, modo torquatos pertinacia ei vis, pro ad integre denique lucilius. Te sed quod erat petentium. Id mandamus vituperata honestatis eam, definiebas dissentiunt no mei. Accusamus efficiendi at sea. Veritus luptatum antiopam cum ad, ut case cotidieque usu, aliquam honestatis voluptatibus ei nec. Mel ut elit altera feugiat, mundi mollis ocurreret at eam, unum tempor intellegebat nam at. Minim liber et vis, his an elit fugit antiopam.`,
+
+    thirdParagraph: `Ne eos legere tibique, modo torquatos pertinacia ei vis, pro ad integre denique lucilius. Te sed quod erat petentium. Id mandamus vituperata honestatis eam, definiebas dissentiunt no mei. Accusamus efficiendi at sea. Veritus luptatum antiopam cum ad, ut case cotidieque usu, aliquam honestatis voluptatibus ei nec. Mel ut elit altera feugiat, mundi mollis ocurreret at eam, unum tempor intellegebat nam at. Minim liber et vis, his an elit fugit antiopam.`
+  },
+
+  {
+    title: 'New Article 2',
+    date: 'Jan 1st, 2019',
+    firstParagraph: `Oratio torquatos est et, te sea graeci eligendi consectetuer. Mea causae periculis moderatius ea, dolore mnesarchum ad pri. Solum accusata adipiscing ut usu, cum vidit dicta indoctum ei. In quodsi tritani nam, nam primis nominavi in, audire noluisse voluptua ut nam. Est ea munere facilis expetendis, eam ex lorem malorum definitionem. Te nec melius aeterno, in mel animal ullamcorper, quod delenit eum an. `,
+
+    secondParagraph: `Oratio torquatos est et, te sea graeci eligendi consectetuer. Mea causae periculis moderatius ea, dolore mnesarchum ad pri. Solum accusata adipiscing ut usu, cum vidit dicta indoctum ei. In quodsi tritani nam, nam primis nominavi in, audire noluisse voluptua ut nam. Est ea munere facilis expetendis, eam ex lorem malorum definitionem. Te nec melius aeterno, in mel animal ullamcorper, quod delenit eum an. `,
+
+    thirdParagraph: `Oratio torquatos est et, te sea graeci eligendi consectetuer. Mea causae periculis moderatius ea, dolore mnesarchum ad pri. Solum accusata adipiscing ut usu, cum vidit dicta indoctum ei. In quodsi tritani nam, nam primis nominavi in, audire noluisse voluptua ut nam. Est ea munere facilis expetendis, eam ex lorem malorum definitionem. Te nec melius aeterno, in mel animal ullamcorper, quod delenit eum an.`
   }
 ];
 
@@ -146,7 +166,7 @@ function createArticle(object) {
   //functionality
   span.addEventListener('click',()=>{
     article.classList.toggle('article-open');
-    
+
   })
 
 return article;
@@ -157,3 +177,15 @@ const articles = document.querySelector('.articles');
 data.forEach((el)=>{
   articles.appendChild(createArticle(el));
 })
+//just a reference in case i want to map it instead.
+// let newCards = cardData.map((card)=>{
+//   let newCard = createCard(card);
+
+//   return newCard;
+// });
+
+// let container = document.querySelector('.container');
+
+// newCards.forEach(component=>{
+//   container.appendChild(component);
+// });
