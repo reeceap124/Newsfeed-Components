@@ -72,7 +72,7 @@ const data = [
   },
   {
     title: 'Professional Software Development in 2019',
-    date: 'Jan 1st, 2019',
+    date: 'Sept 28, 2019',
     firstParagraph: `Hodor hodor HODOR! Hodor hodor - hodor, hodor. Hodor hodor... Hodor hodor hodor; hodor hodor. Hodor hodor hodor, hodor, hodor
           hodor. Hodor, hodor. Hodor. Hodor, hodor - hodor... Hodor hodor hodor; hodor HODOR hodor, hodor hodor?! Hodor hodor, hodor.
           Hodor hodor hodor hodor hodor! Hodor hodor - HODOR hodor, hodor hodor hodor hodor hodor; hodor hodor? `,
@@ -85,20 +85,31 @@ const data = [
     thirdParagraph: `Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
           Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
           Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
+  },
+
+  {
+    title: 'New Article 1',
+    date: 'Oct 30, 2019',
+    firstParagraph: `Ne eos legere tibique, modo torquatos pertinacia ei vis, pro ad integre denique lucilius. Te sed quod erat petentium. Id mandamus vituperata honestatis eam, definiebas dissentiunt no mei. Accusamus efficiendi at sea. Veritus luptatum antiopam cum ad, ut case cotidieque usu, aliquam honestatis voluptatibus ei nec. Mel ut elit altera feugiat, mundi mollis ocurreret at eam, unum tempor intellegebat nam at. Minim liber et vis, his an elit fugit antiopam.`,
+
+    secondParagraph: `Ne eos legere tibique, modo torquatos pertinacia ei vis, pro ad integre denique lucilius. Te sed quod erat petentium. Id mandamus vituperata honestatis eam, definiebas dissentiunt no mei. Accusamus efficiendi at sea. Veritus luptatum antiopam cum ad, ut case cotidieque usu, aliquam honestatis voluptatibus ei nec. Mel ut elit altera feugiat, mundi mollis ocurreret at eam, unum tempor intellegebat nam at. Minim liber et vis, his an elit fugit antiopam.`,
+
+    thirdParagraph: `Ne eos legere tibique, modo torquatos pertinacia ei vis, pro ad integre denique lucilius. Te sed quod erat petentium. Id mandamus vituperata honestatis eam, definiebas dissentiunt no mei. Accusamus efficiendi at sea. Veritus luptatum antiopam cum ad, ut case cotidieque usu, aliquam honestatis voluptatibus ei nec. Mel ut elit altera feugiat, mundi mollis ocurreret at eam, unum tempor intellegebat nam at. Minim liber et vis, his an elit fugit antiopam.`
+  },
+
+  {
+    title: 'New Article 2',
+    date: 'Jan 1st, 2019',
+    firstParagraph: `Oratio torquatos est et, te sea graeci eligendi consectetuer. Mea causae periculis moderatius ea, dolore mnesarchum ad pri. Solum accusata adipiscing ut usu, cum vidit dicta indoctum ei. In quodsi tritani nam, nam primis nominavi in, audire noluisse voluptua ut nam. Est ea munere facilis expetendis, eam ex lorem malorum definitionem. Te nec melius aeterno, in mel animal ullamcorper, quod delenit eum an. `,
+
+    secondParagraph: `Oratio torquatos est et, te sea graeci eligendi consectetuer. Mea causae periculis moderatius ea, dolore mnesarchum ad pri. Solum accusata adipiscing ut usu, cum vidit dicta indoctum ei. In quodsi tritani nam, nam primis nominavi in, audire noluisse voluptua ut nam. Est ea munere facilis expetendis, eam ex lorem malorum definitionem. Te nec melius aeterno, in mel animal ullamcorper, quod delenit eum an. `,
+
+    thirdParagraph: `Oratio torquatos est et, te sea graeci eligendi consectetuer. Mea causae periculis moderatius ea, dolore mnesarchum ad pri. Solum accusata adipiscing ut usu, cum vidit dicta indoctum ei. In quodsi tritani nam, nam primis nominavi in, audire noluisse voluptua ut nam. Est ea munere facilis expetendis, eam ex lorem malorum definitionem. Te nec melius aeterno, in mel animal ullamcorper, quod delenit eum an.`
   }
 ];
 
 /* Step 1: Create a function that creates a component. You will want your component to look like the template below: 
   
-  <div class="article">
-    <h2>{title of the article}</h2>
-    <p class="date">{date of the article}</p>
-
-    {three separate paragraph elements}
-
-    <span class='expandButton'></span>
-  </div>
-
   Hint: You will need to use createElement more than once here!
 
   Your function should take either an object as it's one argument, or 5 separate arguments mapping to each piece of the data object above.
@@ -111,4 +122,70 @@ const data = [
 
   Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new article.
 
+  <div class="article">
+    <h2>{title of the article}</h2>
+    <p class="date">{date of the article}</p>
+
+    {three separate paragraph elements}
+
+    <span class='expandButton'></span>
+  </div>
+
 */
+function createArticle(object) {
+  //define new elements
+  const article = document.createElement('article');
+  const h2 = document.createElement('h2');
+  const date = document.createElement('p');
+  const p1 = document.createElement('p');
+  const p2 = document.createElement('p');
+  const p3 = document.createElement('p');
+  const span = document.createElement('span');
+
+  //structure of elements
+  article.appendChild(h2);
+  article.appendChild(date);
+  article.appendChild(p1);
+  article.appendChild(p2);
+  article.appendChild(p3);
+  article.appendChild(span);
+
+  //text content
+  h2.textContent = object.title;
+  date.textContent = object.date;
+  p1.textContent = object.firstParagraph;
+  p2.textContent = object.secondParagraph;
+  p3.textContent = object.thirdParagraph;
+  span.textContent = 'Expand';
+
+  //class names
+  article.classList.add('article');
+  date.classList.add('date');
+  span.classList.add('expandButton');
+
+  //functionality
+  span.addEventListener('click',()=>{
+    article.classList.toggle('article-open');
+
+  })
+
+return article;
+} //end createArticle
+
+const articles = document.querySelector('.articles');
+
+data.forEach((el)=>{
+  articles.appendChild(createArticle(el));
+})
+//just a reference in case i want to map it instead.
+// let newCards = cardData.map((card)=>{
+//   let newCard = createCard(card);
+
+//   return newCard;
+// });
+
+// let container = document.querySelector('.container');
+
+// newCards.forEach(component=>{
+//   container.appendChild(component);
+// });
